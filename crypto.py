@@ -17,14 +17,14 @@ def gui():
  ctk.set_appearance_mode("dark")
  ctk.set_default_color_theme("blue")
 
- bg_image = Image.open(r"D:\desktop\Desktop\py api weather app\crypto_bg.png")
+ bg_image = Image.open(r"D:\desktop\Desktop\pyapp\crypto_bg.png")
  bg_photo = ImageTk.PhotoImage(bg_image)
  background_label = ctk.CTkLabel(app, image=bg_photo, text="")
  background_label.image = bg_photo
  background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
  #refresh
- refresh_icon = Image.open(r"D:\desktop\Desktop\py api weather app\refresh.png")
+ refresh_icon = Image.open(r"D:\desktop\Desktop\pyapp\refresh.png")
  refresh_icon = refresh_icon.resize((20, 20))
  refresh_icon = ImageTk.PhotoImage(refresh_icon)
  
@@ -34,8 +34,8 @@ def gui():
 def get_price():
  
  api_url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
- api_key = 'c3bca26f-7995-40ff-8fa1-dc07e2772c3d'
- headers = {"X-CMC_PRO_API_KEY": "c3bca26f-7995-40ff-8fa1-dc07e2772c3d"}
+ api_key = 'your API key'
+ headers = {"X-CMC_PRO_API_KEY": "your API key"}
  params = {"symbol": "BTC", "convert": "USD"}
  response = requests.get(api_url, headers=headers, params=params)
  data = response.json()
@@ -82,3 +82,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
