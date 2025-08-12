@@ -17,14 +17,16 @@ def gui():
  ctk.set_appearance_mode("dark")
  ctk.set_default_color_theme("blue")
 
- bg_image = Image.open(r"D:\desktop\Desktop\pyapp\crypto_bg.png")
+
+ BASE_DIR = os.path.dirname(__file__)
+ bg_image = Image.open(os.path.join(BASE_DIR, "assets", "crypto_bg.png"))
  bg_photo = ImageTk.PhotoImage(bg_image)
  background_label = ctk.CTkLabel(app, image=bg_photo, text="")
  background_label.image = bg_photo
  background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
  #refresh
- refresh_icon = Image.open(r"D:\desktop\Desktop\pyapp\refresh.png")
+ refresh_icon = Image.open(os.path.join(BASE_DIR, "assets", "refresh.png"))
  refresh_icon = refresh_icon.resize((20, 20))
  refresh_icon = ImageTk.PhotoImage(refresh_icon)
  
@@ -82,4 +84,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
